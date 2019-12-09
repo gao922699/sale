@@ -56,6 +56,9 @@
 }
 .van-cell input{
     height: 80px;
+    font-size: 28px;
+}
+.van-cell .van-icon{
     font-size: 30px;
 }
 .cont {
