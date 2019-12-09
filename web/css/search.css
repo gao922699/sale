@@ -41,7 +41,7 @@
     height: auto;
 }
 .search {
-    height: 60px;
+    height: 80px;
     margin: 10px auto;
 }
 .search .van-search{
@@ -49,13 +49,13 @@
 }
 .search .van-search,
 .van-cell{
-    height: 60px;
+    height: 80px;
 }
 .search .van-field__left-icon{
-    line-height: 60px;
+    line-height: 80px;
 }
 .van-cell input{
-    height: 60px;
+    height: 80px;
     font-size: 30px;
 }
 .cont {

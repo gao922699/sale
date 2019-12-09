@@ -32,24 +32,22 @@
     height: auto;
 }
 .search {
-    height: 60px;
+    height: 80px;
     margin: 10px auto;
-    background: #fff;
-    box-sizing: border-box;
-    padding:0 10px;
 }
 .search .van-search{
     padding: 0;
 }
 .search .van-search,
 .van-cell{
-    height: 60px;
+    height: 80px;
 }
 .search .van-field__left-icon{
-    line-height: 50px;
+    line-height: 80px;
 }
 .van-cell input{
-    height: 50px;
+    height: 80px;
+    font-size: 30px;
 }
 .cont {
     background: #fafafa;
