@@ -105,12 +105,12 @@ class GoodsController extends BaseController
      * @param string $keywords
      * @return array
      */
-    public function actionPaginate($page = 1, $cateId = '', $keywords = '')
+    public function actionPaginate($page = 1, $cateId = null, $keywords = '')
     {
         $pageSize = 20;
         $offset = ($page - 1) * $pageSize;
         $goods = Goods::find()
-            ->andFilterWhere(['cateId' => $cateId])
+            ->andFilterWhere(['cate_id' => $cateId])
             ->andFilterWhere(['like', 'name', $keywords])
             ->active()
             ->orderBy('count desc')

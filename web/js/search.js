@@ -56,8 +56,8 @@ var v = new Vue({
                 }
             });
         },
-        showGoods(cateId) {
-            window.location.href = '/goods/list?cateId=' + cateId;
+        showGoods(cate) {
+            window.location.href = '/goods/list?cateId=' + cate.id + '&cateName=' + cate.name;
         }
     },
     created() {

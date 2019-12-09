@@ -29,10 +29,10 @@ use yii\web\View; ?>
                      v-for="(item,index) in childCates"
                      :key="item.id"
                      :title="item.name">
-                    <div class="img" @click="showGoods(item.id)">
+                    <div class="img" @click="showGoods(item)">
                         <img :src="item.photo" :alt="item.name">
                     </div>
-                    <div class="name" @click="showGoods(item.id)">
+                    <div class="name" @click="showGoods(item)">
                         {{item.name}}
                     </div>
                 </div>
