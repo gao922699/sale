@@ -120,3 +120,16 @@
 .van-icon{
     font-size: 30px;
 }
+.van-search__action{
+    background: #07c160;
+    height: 80px;
+    font-size: 30px;
+    line-height: 80px;
+    width: 80px;
+    text-align: center;
+    color: #fff;
+}
+.van-list__finished-text{
+    font-size: 25px;
+    line-height: 80px;
+}
