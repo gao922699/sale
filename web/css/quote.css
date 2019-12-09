@@ -140,6 +140,13 @@
 .item .itemRight{
     float: left;
 }
+.itemRight input {
+    border: 1px solid #ccc;
+    width: 350px;
+    height: 60px;
+    padding: 15px;
+    box-sizing: border-box;
+}
 .item .van-stepper input {
     font-size: 30px;
 }
