@@ -67,3 +67,13 @@
     margin-right: 20px;
     font-size: 18px;
 }
+
+.van-tabbar{
+    height: 120px;
+}
+.van-tabbar-item {
+    font-size: 35px;
+}
+.van-icon{
+    font-size: 30px;
+}

@@ -113,3 +113,12 @@ a.desc:after {
 .nav > li > form > button.logout:focus {
     outline: none;
 }
+.van-tabbar{
+    height: 120px;
+}
+.van-tabbar-item {
+    font-size: 35px;
+}
+.van-icon{
+    font-size: 30px;
+}

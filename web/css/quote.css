@@ -191,3 +191,12 @@
 .van-picker-column li {
     font-size: 25px;
 }
+.van-tabbar{
+    height: 120px;
+}
+.van-tabbar-item {
+    font-size: 35px;
+}
+.van-icon{
+    font-size: 30px;
+}

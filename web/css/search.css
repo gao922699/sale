@@ -52,13 +52,15 @@
     height: 60px;
 }
 .search .van-field__left-icon{
-    line-height: 50px;
+    line-height: 60px;
 }
 .van-cell input{
-    height: 50px;
+    height: 60px;
+    font-size: 30px;
 }
 .cont {
     background: #fafafa;
+    min-height: 1000px;
 }
 .cont .list {
     width: 220px;
@@ -113,4 +115,13 @@
 }
 .clearfix {
     zoom:1
+}
+.van-tabbar{
+    height: 120px;
+}
+.van-tabbar-item {
+    font-size: 35px;
+}
+.van-icon{
+    font-size: 30px;
 }
