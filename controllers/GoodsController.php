@@ -4,6 +4,7 @@
 namespace app\controllers;
 
 
+use app\models\Cate;
 use app\models\Favorite;
 use app\models\Goods;
 use app\models\UserCost;
@@ -12,9 +13,33 @@ use yii\web\Controller;
 
 class GoodsController extends BaseController
 {
-    public function actionIndex($params)
+    public function actionIndex()
     {
-        return '页面：搜索列表';
+        return $this->render('index');
+    }
+
+    public function actionList()
+    {
+        return $this->render('list');
+    }
+
+    public function actionTopCates()
+    {
+        $topCates = Cate::getTopCates();
+        $results = [];
+        foreach ($topCates as $id => $name) {
+            $results[] = [
+                'id' => $id,
+                'text' => $name
+            ];
+        }
+        return $this->jsonResponse('success', $results);
+    }
+
+    public function actionChildCates($topCateId)
+    {
+        $childCates = Cate::find()->where(['parent_id' => $topCateId])->asArray()->all();
+        return $this->jsonResponse('success', $childCates);
     }
 
     public function actionDetail($id)

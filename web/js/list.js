@@ -36,9 +36,7 @@ var v = new Vue({
             });
         },
         search() {
-            this.page = 1;
-            this.goods = [];
-            this.getGoods();
+            window.location.href = '/goods/list?keywords=' + this.keywords;
         },
         getGoods() {
             var vm = this;

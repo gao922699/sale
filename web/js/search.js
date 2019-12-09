@@ -1,23 +1,66 @@
 var v = new Vue({
-  el: ".index",
-  data() {
-    return {
-      activeIndex: 0,
-      items: [{ text: '分组 1' }, { text: '分组 2' }],
-      value: ''
-    };
-  },
-  methods:{
-    onClickLeft:function(index){
-      console.log(index)
-      this.activeIndex = index
+    el: ".index",
+    data() {
+        return {
+            active: 1,
+            cartNum: 0,
+            keywords: '',
+            activeIndex: 0,
+            topCates: [],
+            childCates: []
+        };
     },
-    check:function(index){
-      console.log(index)
-      this.activeIndex = index
+    methods: {
+        getCartNum() {
+            var vm = this;
+            $.ajax({
+                type: "GET",
+                url: "/offer/cart-num",
+                dataType: "json",
+                success: function (response) {
+                    vm.cartNum = response.data.num;
+                }
+            });
+        },
+        onClickLeft: function () {
+            history.go(-1);
+        },
+        search() {
+            window.location.href = '/goods/list?keywords=' + this.keywords;
+        },
+        getChildCates: function (index) {
+            var vm = this;
+            vm.activeIndex = index;
+            var topCateId = vm.topCates[index].id;
+            $.ajax({
+                type: "GET",
+                url: "/goods/child-cates",
+                dataType: "json",
+                data: {
+                    topCateId: topCateId
+                },
+                success: function (response) {
+                    console.log(response.data);
+                    vm.childCates = response.data;
+                }
+            });
+        },
+        getTopCates() {
+            var vm = this;
+            $.ajax({
+                type: "GET",
+                url: "/goods/top-cates",
+                dataType: "json",
+                success: function (response) {
+                    vm.topCates = response.data;
+                }
+            });
+        },
+        showGoods(cateId) {
+            window.location.href = '/goods/list?cateId=' + cateId;
+        }
+    },
+    created() {
+        this.getTopCates();
     }
-  },
-  created(){
-
-  }
 })
