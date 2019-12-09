@@ -82,3 +82,9 @@
 .van-icon{
     font-size: 30px;
 }
+.van-info {
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+}

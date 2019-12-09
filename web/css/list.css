@@ -45,7 +45,7 @@
     font-size: 28px;
 }
 .van-cell .van-icon{
-    font-size: 30px;
+    font-size: 40px;
 }
 
 
@@ -114,4 +114,10 @@
 }
 .van-icon{
     font-size: 30px;
+}
+.van-info {
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
 }
