@@ -1,0 +1,41 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.mb10 {
+    margin-bottom: 10px;
+}
+
+.index {
+    width: 750px;
+    min-height: 700px;
+    margin: 0 auto;
+    background: #eee;
+}
+
+.index .list {
+    margin-bottom: 20px;
+    height: 100px;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.index .mt100 {
+    margin-top: 400px;
+}
+.van-tabbar{
+    height: 120px;
+}
+.van-tabbar-item {
+    font-size: 35px;
+}
+.van-icon{
+    font-size: 40px;
+}
+.van-info {
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+}

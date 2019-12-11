@@ -167,7 +167,7 @@ class OfferController extends BaseController
 
     public function actionDetailInfo($id)
     {
-        $detail = Offer::find()->with('offerGoods')->where(['id' => $id])->asArray()->one();
+        $detail = Offer::find()->with('offerGoods')->with('offerGoods.goods')->with('user')->where(['id' => $id])->asArray()->one();
         return $this->jsonResponse('success', $detail);
     }
 
