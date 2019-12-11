@@ -43,7 +43,7 @@
     font-size: 30px;
     line-height: 50px;
 }
-.van-tabs__wrap {
+.van-tabs--line  .van-tabs__wrap {
     height: 70px;
 }
 .van-tabs__wrap .van-ellipsis {
@@ -57,4 +57,23 @@
     height: 80px;
     font-size: 30px;
     float: right;
+}
+.van-cell__value {
+    font-size: 25px;
+}
+.offer-with-cost h1 {
+    font-size: 30px;
+    margin: 20px 10px;
+}
+
+.offer-with-cost h2{
+    color: #333;
+    padding: 0 10px;
+}
+.van-cell-group {
+    padding:30px 10px;
+    background: #fafafa;
+}
+.van-tabs__content {
+    background: #fff;
 }
