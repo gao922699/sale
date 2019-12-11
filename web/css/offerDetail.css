@@ -39,3 +39,22 @@
     height: 30px;
     line-height: 30px;
 }
+.van-cell{
+    font-size: 30px;
+    line-height: 50px;
+}
+.van-tabs__wrap {
+    height: 70px;
+}
+.van-tabs__wrap .van-ellipsis {
+    font-size: 30px;
+    height: 70px;
+    line-height: 70px;
+    font-size: 30px;
+}
+.van-button {
+    width: 250px;
+    height: 80px;
+    font-size: 30px;
+    float: right;
+}
