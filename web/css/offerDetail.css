@@ -61,12 +61,12 @@
 .van-cell__value {
     font-size: 25px;
 }
-.offer-with-cost h1 {
+#offer h1 {
     font-size: 30px;
     margin: 20px 10px;
 }
 
-.offer-with-cost h2{
+#offer h2{
     color: #333;
     padding: 0 10px;
 }
