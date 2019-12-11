@@ -11,7 +11,7 @@
     width: 750px;
     min-height: 700px;
     margin: 0 auto;
-    background: #eee;
+    background: #fafafa;
 }
 
 .index .list {
@@ -61,12 +61,14 @@
 .van-cell__value {
     font-size: 25px;
 }
-#offer h1 {
+#offer h1 
+#offer-with-cost h1{
     font-size: 30px;
     margin: 20px 10px;
 }
 
-#offer h2{
+#offer h2,
+#offer-with-cost h2{
     color: #666;
     padding: 10px;
 }
@@ -82,4 +84,16 @@
 }
 .van-tabs__content {
     background: #fff;
+}
+
+.van-nav-bar{
+    z-index: 1;
+    height: 70px;
+    line-height: 70px;
+}
+.van-nav-bar .van-nav-bar__title {
+    font-size: 30px;
+}
+.van-nav-bar__text {
+    font-size: 28px;
 }
