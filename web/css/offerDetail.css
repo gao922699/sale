@@ -67,11 +67,17 @@
 }
 
 #offer h2{
-    color: #333;
-    padding: 0 10px;
+    color: #666;
+    padding: 10px;
 }
 .van-cell-group {
-    padding:30px 10px;
+    padding: 0 10px;
+    background: #fafafa;
+    margin: 10px 0;
+}
+.van-cell-group .van-cell {
+    font-size: 30px;
+    line-height: 50px;
     background: #fafafa;
 }
 .van-tabs__content {
