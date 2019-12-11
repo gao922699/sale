@@ -108,3 +108,32 @@
     font-size: 25px;
     line-height: 80px;
 }
+
+
+.van-panel__content{
+    font-size: 30px;
+    padding-left: 18px;
+}
+
+.van-button {
+    width: 250px;
+    height: 80px;
+    font-size: 30px;
+    float: right;
+}
+.van-panel__footer{
+    height: 100px;
+}
+.van-cell {
+    padding: 20px 0;
+}
+.van-cell__title span{
+    font-size: 30px;
+}
+.van-cell__title .van-cell__label {
+    font-size: 28px;
+    color:#666;
+}
+.van-cell__value {
+    font-size: 28px;
+}
