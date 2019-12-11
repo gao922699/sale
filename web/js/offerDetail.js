@@ -34,7 +34,7 @@ var v = new Vue({
                 },
                 success: function (response) {
                     vm.detail = response.data;
-                    vm.detail.date = vm.detail.date.split(" ")[0];
+                    vm.detail.date = vm.detail.date.split(' ')[0];
                 }
             });
         },

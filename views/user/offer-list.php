@@ -29,7 +29,7 @@ $this->title = Yii::$app->name . '-我的报价单';
                     :key="item.id"
                     :title="item.name"
                     :desc="item.tel"
-                    :status="item.date"
+                    :status="item.date.split(' ')[0]"
             >
                 <div>共 {{item.offerGoods.length}} 种商品</div>
                 <div slot="footer">
