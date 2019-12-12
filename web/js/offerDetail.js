@@ -7,7 +7,6 @@ var v = new Vue({
         cartNum: 0,
         detail: {},
         dialogShow: false,
-        dialogTitle: '',
         imageHref: ''
     },
     methods: {
@@ -56,7 +55,6 @@ var v = new Vue({
                 width: width
             }).then((canvas) => {
                 var url = canvas.toDataURL("image/png");
-                this.dialogTitle = this.detail.name + '的报价单';
                 // 将生成的URL设置为a.href属性
                 this.imageHref = url;
                 this.dialogShow = true;
@@ -78,7 +76,6 @@ var v = new Vue({
                 width: width
             }).then((canvas) => {
                 var url = canvas.toDataURL("image/png");
-                this.dialogTitle = this.detail.name + '的报价单';
                 // 将生成的URL设置为a.href属性
                 this.imageHref = url;
                 this.dialogShow = true;
