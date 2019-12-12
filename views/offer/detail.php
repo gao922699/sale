@@ -67,6 +67,13 @@ $this->title = Yii::$app->name . '-报价单详情';
                 </div>
             </van-tab>
         </van-tabs>
+        <van-dialog
+                v-model="dialogShow"
+                :title="dialogTitle"
+                show-cancel-button
+        >
+            <img :src="imageHref" style="height:100%;width:100%;">
+        </van-dialog>
 
         <van-tabbar v-model="active">
             <van-tabbar-item icon="home-o" url="/">首页</van-tabbar-item>
