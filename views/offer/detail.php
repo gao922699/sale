@@ -9,6 +9,7 @@ $this->title = Yii::$app->name . '-报价单详情';
 
 ?>
 <?= Html::cssFile('/css/offerDetail.css', ['position' => View::POS_HEAD]) ?>
+<?= Html::jsFile('/js/html2canvas/html2canvas.min.js', ['position' => View::POS_HEAD]) ?>
     <div class="index clearfix">
         <div class="nav mb10">
             <van-nav-bar
@@ -20,7 +21,7 @@ $this->title = Yii::$app->name . '-报价单详情';
         </div>
         <van-tabs v-model="tabActive">
             <van-tab title="客户报价单">
-                <div id="offer">
+                <div ref="image">
                     <div>
                         <h1>报价单</h1>
                     </div>
@@ -43,7 +44,7 @@ $this->title = Yii::$app->name . '-报价单详情';
                 </div>
             </van-tab>
             <van-tab title="内部报价单">
-                <div id="offer-with-cost">
+                <div ref="imageWithCost">
                     <div>
                         <h1>报价单</h1>
                     </div>
