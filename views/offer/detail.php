@@ -71,7 +71,7 @@ $this->title = Yii::$app->name . '-报价单详情';
                 v-model="dialogShow"
                 title="长按保存图片"
                 :width="window.innerWidth * 0.8"
-                :show-confirm-button="false"
+                confirm-button-text="关 闭"
         >
             <img :src="imageHref" style="height:100%;width:100%;">
         </van-dialog>
