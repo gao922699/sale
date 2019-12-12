@@ -21,7 +21,7 @@ $this->title = Yii::$app->name . '-报价单详情';
         </div>
         <van-tabs v-model="tabActive">
             <van-tab title="客户报价单">
-                <div ref="image">
+                <div ref="image" id="offer">
                     <div>
                         <h1>报价单</h1>
                     </div>
@@ -44,7 +44,7 @@ $this->title = Yii::$app->name . '-报价单详情';
                 </div>
             </van-tab>
             <van-tab title="内部报价单">
-                <div ref="imageWithCost">
+                <div ref="imageWithCost" id="offer-with-cost">
                     <div>
                         <h1>报价单</h1>
                     </div>
