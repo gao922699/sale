@@ -47,7 +47,7 @@
 }
 
 .detailInfo h3 {
-    font-size: 24px;
+    font-size: 35px;
 }
 
 .detailInfo .text {
@@ -61,9 +61,11 @@
 
 .price div {
     margin-right: 20px;
-    font-size: 18px;
+    font-size: 25px;
 }
-
+.text {
+    font-size: 24px;
+}
 .van-goods-action-button {
     height: 70px;
     font-size: 20px;
