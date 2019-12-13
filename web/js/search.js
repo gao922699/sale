@@ -53,6 +53,7 @@ var v = new Vue({
                 dataType: "json",
                 success: function (response) {
                     vm.topCates = response.data;
+                    vm.getChildCates(0);
                 }
             });
         },
