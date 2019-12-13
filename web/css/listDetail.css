@@ -11,7 +11,7 @@
     width: 750px;
     min-height: 700px;
     margin: 0 auto;
-    background: #eee;
+    padding-bottom: 100px;
 }
 
 .index .list {
@@ -73,8 +73,8 @@
 }
 
 .van-goods-action {
-    position: absolute;
-    bottom: 200px;
+    position: relative;
+    top: 20px;
 }
 .van-tabbar{
     height: 120px;
