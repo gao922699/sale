@@ -117,5 +117,6 @@
 
 .van-list__finished-text {
     font-size: 30px;
+    padding: 10px 0;
     background: #fafafa;
 }
