@@ -103,7 +103,7 @@ $this->title = Yii::$app->name . '-待报价商品';
                         <div class="item clearfix">
                             <div class="itemLeft">日期：</div>
                             <div class="itemRight">
-                                <div class="time" @click="showdate = true">{{date}}</div>
+                                <input type="text" v-model="date" disabled/>
                             </div>
                         </div>
                         <div class="selectTime clearfix" v-if="showdate">

@@ -36,6 +36,7 @@ $this->title = Yii::$app->name . '-报价单详情';
                                :key="item.id"
                     >
                     </van-panel>
+                    <h2>商品总价：{{totalPrice}}</h2>
                     <h2>报价日期：{{detail.date}}</h2>
                     <h2>报价单位：{{detail.user.username}}</h2>
                 </div>

@@ -9,6 +9,15 @@ var v = new Vue({
         dialogShow: false,
         imageHref: ''
     },
+    computed:{
+        totalPrice(){
+            var total=0;
+            for(var i=0; i<this.detail.offerGoods.length;i++){
+                total+=parseFloat(this.detail.offerGoods[i].offer_price) * parseInt(this.detail.offerGoods[i].count);
+            }
+            return total.toFixed(2);
+        }
+    },
     methods: {
         getCartNum() {
             var vm = this;

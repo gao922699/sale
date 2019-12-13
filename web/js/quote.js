@@ -20,7 +20,6 @@ var v = new Vue({
             //end
             minDate: new Date(),
             currentDate: new Date(),
-            showdate: false,
             goods: [],
         };
     },
@@ -43,12 +42,6 @@ var v = new Vue({
             this.date = this.formart(this.currentDate);
             this.showdate = false;
         },
-        showdate() {
-            this.showdate = true;
-        },
-        cancelDate() {
-            this.showdate = false;
-        },
         formart(d) {
             var date = new Date(d);
             var year = date.getFullYear();
@@ -60,7 +53,7 @@ var v = new Vue({
             if (day < 10) {
                 day = "0" + day;
             }
-            return nowDate = year + "/" + month + "/" + day;
+            return nowDate = year + "-" + month + "-" + day;
         },
         getCartGoods() {
             var vm = this;
@@ -150,5 +143,6 @@ var v = new Vue({
     created() {
         this.getCartNum();
         this.getCartGoods();
+        this.confirmDate();
     }
 });

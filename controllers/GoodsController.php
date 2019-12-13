@@ -113,7 +113,7 @@ class GoodsController extends BaseController
             ->andFilterWhere(['cate_id' => $cateId])
             ->andFilterWhere(['like', 'name', $keywords])
             ->active()
-            ->orderBy('count desc')
+            ->orderBy('count desc,id desc')
             ->limit($pageSize)->offset($offset)
             ->all();
         $results = [];
