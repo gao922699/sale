@@ -6,7 +6,6 @@
     width: 750px;
     height: auto;
     margin: 0 auto;
-    background: #eee;
 }
 
 .index .list {
@@ -75,7 +74,9 @@
     height: 40px;
     line-height: 40px;
 }
-
+.cont {
+    min-height: 400px;
+}
 .opt .collection {
     text-align: left;
     color: #333;
@@ -114,4 +115,8 @@
 }
 .answer b {
     color:red;
+}
+
+.van-list__finished-text {
+    font-size: 30px;
 }
