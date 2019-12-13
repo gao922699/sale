@@ -106,3 +106,12 @@
     height: 30px;
     line-height: 30px;
 }
+.answer{
+    height: 100px;
+    box-sizing: border-box;
+    padding: 20px;
+    font-size: 30px;
+}
+.answer b {
+    color:red;
+}
