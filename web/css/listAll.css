@@ -32,9 +32,7 @@
     height: auto;
     margin-bottom: 150px;
 }
-.cont {
-    background: #fafafa;
-}
+
 .cont .list {
     width: 360px;
     /* height: 400px; */
@@ -119,4 +117,5 @@
 
 .van-list__finished-text {
     font-size: 30px;
+    background: #fafafa;
 }
