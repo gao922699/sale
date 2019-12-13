@@ -28,10 +28,9 @@
     margin-top:20px;
     width:100%;
     min-height: 900px;
-}  
-.cont {
     background: #fafafa;
-}
+    margin-bottom: 150px;
+}  
 .cont .list {
     width: 100%;
     display: flex;

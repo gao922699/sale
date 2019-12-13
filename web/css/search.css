@@ -39,6 +39,8 @@
 .cont {
     width:100%;
     height: auto;
+    background: #fafafa;
+    margin-bottom: 150px;
 }
 .search {
     height: 80px;

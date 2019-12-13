@@ -31,9 +31,11 @@
 .cont {
     width:100%;
     height: auto;
+    background: #fafafa;
+    margin-bottom: 150px;
 }
 .cont {
-    background: #fafafa;
+    
 }
 .cont .list {
     width: 360px;
