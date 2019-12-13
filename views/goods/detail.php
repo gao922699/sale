@@ -49,7 +49,7 @@ $this->title = Yii::$app->name . '-商品详情';
                         成本价：<span>{{detail.cost}}元</span>
                     </div>
                     <div class="num">
-                        <span @click="show = true">修改</span>
+                      <van-button type="primary" class="btn" @click="show = true">修改</van-button>
                     </div>
                 </div>
                 <p class="text mb10" v-html="detail.detail"></p>

@@ -57,6 +57,7 @@
 
 .detailInfo .price {
     display: flex;
+    margin-bottom: 20px;
 }
 
 .price div {
@@ -73,7 +74,7 @@
 
 .van-goods-action {
     position: absolute;
-    bottom: 50px;
+    bottom: 200px;
 }
 .van-tabbar{
     height: 120px;
@@ -89,4 +90,37 @@
     width: 30px;
     height: 30px;
     line-height: 30px;
+}
+
+.overBox{
+    width: 90%;
+    background: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 20px 30px;
+}
+.title{
+    font-size: 35px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+.itemLeft{
+    font-size: 28px;
+}
+.itemRight input {
+    border:1px solid #ccc;
+    padding:10px;
+    height: 40px;
+    width: 80%;
+    font-size: 30px;
+    margin: 20px 0;
+}
+.itemBtn button {
+    width: 40%;
+    height: 60px;
+    font-size: 32px;
 }
