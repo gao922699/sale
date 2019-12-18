@@ -10,11 +10,17 @@ use Yii;
  * @property int $id
  * @property string $username 用户名
  * @property string $password 密码
- * @property string $authKey authKey
- * @property string $accessToken accessToken
+ * @property string|null $authKey authKey
+ * @property string|null $accessToken accessToken
  * @property int $status 状态
- * @property string $created_at 创建时间
- * @property string $updated_at 更新时间
+ * @property string|null $created_at 创建时间
+ * @property string|null $updated_at 更新时间
+ * @property string|null $province 省份
+ * @property string|null $city 城市
+ * @property string|null $address 地址
+ * @property string|null $tel 联系方式
+ * @property string|null $contact 联系人
+ * @property float|null $tax 税率
  */
 class User extends \yii\db\ActiveRecord
 {
@@ -35,7 +41,8 @@ class User extends \yii\db\ActiveRecord
             [['username', 'password', 'status'], 'required'],
             [['status'], 'integer'],
             [['created_at', 'updated_at'], 'safe'],
-            [['username', 'password', 'authKey', 'accessToken'], 'string', 'max' => 255],
+            [['tax'], 'number'],
+            [['username', 'password', 'authKey', 'accessToken', 'province', 'city', 'address', 'tel', 'contact'], 'string', 'max' => 255],
         ];
     }
 
@@ -53,6 +60,12 @@ class User extends \yii\db\ActiveRecord
             'status' => '状态',
             'created_at' => '创建时间',
             'updated_at' => '更新时间',
+            'province' => '省份',
+            'city' => '城市',
+            'address' => '地址',
+            'tel' => '联系方式',
+            'contact' => '联系人',
+            'tax' => '税率',
         ];
     }
 

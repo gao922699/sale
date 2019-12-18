@@ -19,7 +19,16 @@ use yii\widgets\ActiveForm;
         <div class="col-md-2">
             <?= $form->field($model, 'username') ?>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-1">
+            <?= $form->field($model, 'province') ?>
+        </div>
+        <div class="col-md-1">
+            <?= $form->field($model, 'city') ?>
+        </div>
+        <div class="col-md-1">
+            <?= $form->field($model, 'contact') ?>
+        </div>
+        <div class="col-md-1">
             <?php echo $form->field($model, 'status')->dropDownList(User::$statusTxtMap, ['prompt' => '未选择']) ?>
         </div>
         <div class="col-md-2">

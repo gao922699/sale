@@ -16,10 +16,22 @@ $model->confirmPassword = '';
     <?php $form = ActiveForm::begin(); ?>
 
     <?= $form->field($model, 'username')->textInput(['maxlength' => true]) ?>
+    <?php if ($model->isNewRecord) { ?>
+        <?= $form->field($model, 'password')->passwordInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'password')->passwordInput(['maxlength' => true]) ?>
+        <?= $form->field($model, 'confirmPassword')->passwordInput(['maxlength' => true]) ?>
+    <?php } ?>
+    <?= $form->field($model, 'province')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'confirmPassword')->passwordInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'city')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'address')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'tel')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'contact')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'tax')->textInput()->label('税率（0-1）之间的两位小数，如0.17') ?>
 
     <div class="form-group">
         <?= Html::submitButton('保存', ['class' => 'btn btn-success']) ?>

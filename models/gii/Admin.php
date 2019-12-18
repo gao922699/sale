@@ -10,12 +10,17 @@ use Yii;
  * @property int $id
  * @property string $username 用户名
  * @property string $password 密码
- * @property string $authKey authKey
- * @property string $accessToken accessToken
+ * @property string|null $authKey authKey
+ * @property string|null $accessToken accessToken
+ * @property string|null $province 省份
+ * @property string|null $city 城市
+ * @property string|null $address 地址
+ * @property string|null $tel 联系方式
+ * @property string|null $contact 联系人
  * @property int $role 角色
  * @property int $status 状态
- * @property string $created_at 创建时间
- * @property string $updated_at 更新时间
+ * @property string|null $created_at 创建时间
+ * @property string|null $updated_at 更新时间
  */
 class Admin extends \yii\db\ActiveRecord
 {
@@ -36,7 +41,7 @@ class Admin extends \yii\db\ActiveRecord
             [['username', 'password', 'role', 'status'], 'required'],
             [['role', 'status'], 'integer'],
             [['created_at', 'updated_at'], 'safe'],
-            [['username', 'password', 'authKey', 'accessToken'], 'string', 'max' => 255],
+            [['username', 'password', 'authKey', 'accessToken', 'province', 'city', 'address', 'tel', 'contact'], 'string', 'max' => 255],
         ];
     }
 
@@ -51,6 +56,11 @@ class Admin extends \yii\db\ActiveRecord
             'password' => '密码',
             'authKey' => 'authKey',
             'accessToken' => 'accessToken',
+            'province' => '省份',
+            'city' => '城市',
+            'address' => '地址',
+            'tel' => '联系方式',
+            'contact' => '联系人',
             'role' => '角色',
             'status' => '状态',
             'created_at' => '创建时间',

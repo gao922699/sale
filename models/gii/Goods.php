@@ -10,17 +10,18 @@ use Yii;
  * @property int $id
  * @property string $name 名称
  * @property string $thumb 缩略图
- * @property string $carousel 轮播图
- * @property string $detail 详情
+ * @property string|null $carousel 轮播图
+ * @property string|null $abstract 简介
+ * @property string|null $detail 详情
  * @property int $cate_id 分类
  * @property string $type 型号
  * @property string $brand 品牌
- * @property string $price 建议零售价
- * @property int $count 被报价次数
+ * @property float $price 建议零售价
+ * @property int|null $count 被报价次数
  * @property int $status 状态
  * @property int $admin_id 所属供应商
- * @property string $created_at 创建时间
- * @property string $updated_at 更新时间
+ * @property string|null $created_at 创建时间
+ * @property string|null $updated_at 更新时间
  */
 class Goods extends \yii\db\ActiveRecord
 {
@@ -43,7 +44,7 @@ class Goods extends \yii\db\ActiveRecord
             [['cate_id', 'count', 'status', 'admin_id'], 'integer'],
             [['price'], 'number'],
             [['created_at', 'updated_at'], 'safe'],
-            [['name', 'thumb'], 'string', 'max' => 255],
+            [['name', 'thumb', 'abstract'], 'string', 'max' => 255],
             [['type', 'brand'], 'string', 'max' => 50],
         ];
     }
@@ -58,6 +59,7 @@ class Goods extends \yii\db\ActiveRecord
             'name' => '名称',
             'thumb' => '缩略图',
             'carousel' => '轮播图',
+            'abstract' => '简介',
             'detail' => '详情',
             'cate_id' => '分类',
             'type' => '型号',

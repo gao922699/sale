@@ -17,11 +17,23 @@ $model->confirmPassword = '';
 
     <?= $form->field($model, 'username')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'password')->passwordInput(['maxlength' => true]) ?>
+    <?php if ($model->isNewRecord) { ?>
+        <?= $form->field($model, 'role')->dropDownList(Admin::$roleTxtMap) ?>
 
-    <?= $form->field($model, 'confirmPassword')->passwordInput(['maxlength' => true]) ?>
+        <?= $form->field($model, 'password')->passwordInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'role')->dropDownList(Admin::$roleTxtMap) ?>
+        <?= $form->field($model, 'confirmPassword')->passwordInput(['maxlength' => true]) ?>
+    <?php } ?>
+    
+    <?= $form->field($model, 'province')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'city')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'address')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'tel')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'contact')->textInput(['maxlength' => true]) ?>
 
     <div class="form-group">
         <?= Html::submitButton('保存', ['class' => 'btn btn-success']) ?>

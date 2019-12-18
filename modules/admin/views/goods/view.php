@@ -25,6 +25,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     'image', ['height' => 70, 'width' => 70]
                 ]
             ],
+            'abstract',
             [
                 'attribute' => 'carousel',
                 'format' => 'raw',

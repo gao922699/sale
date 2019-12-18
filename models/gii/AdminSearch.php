@@ -18,7 +18,7 @@ class AdminSearch extends Admin
     {
         return [
             [['id', 'role', 'status'], 'integer'],
-            [['username', 'password', 'authKey', 'accessToken', 'created_at', 'updated_at'], 'safe'],
+            [['username', 'password', 'authKey', 'accessToken', 'province', 'city', 'created_at', 'updated_at'], 'safe'],
         ];
     }
 
@@ -72,6 +72,8 @@ class AdminSearch extends Admin
 
         $query->andFilterWhere(['like', 'username', $this->username])
             ->andFilterWhere(['like', 'password', $this->password])
+            ->andFilterWhere(['like', 'province', $this->province])
+            ->andFilterWhere(['like', 'city', $this->city])
             ->andFilterWhere(['like', 'authKey', $this->authKey])
             ->andFilterWhere(['like', 'accessToken', $this->accessToken]);
 

@@ -68,6 +68,9 @@ if ($model->isNewRecord) {
                 </div>
             </div>
             <div class="col-md-7">
+
+                <?= $form->field($model, 'abstract')->textarea(['maxlength' => true]) ?>
+
                 <?= $form->field($model, 'carousel')->textInput(['readonly' => 'readonly', 'id' => 'carousel']) ?>
                 <div id="uploader-carousel">
                     <!--用来存放item-->

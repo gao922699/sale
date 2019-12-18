@@ -23,6 +23,11 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'username',
+            'province',
+            'city',
+            'address',
+            'tel',
+            'contact',
             [
                 'attribute' => 'role',
                 'value' => Admin::$roleTxtMap[$model->role]

@@ -119,6 +119,27 @@ class AdminController extends BaseController
     }
 
     /**
+     * @param $id
+     * @return string|\yii\web\Response
+     * @throws NotFoundHttpException
+     */
+    public function actionUpdate($id)
+    {
+        $model = $this->findModel($id);
+
+        if ($model->load(Yii::$app->request->post())) {
+            $model->confirmPassword = $model->password;
+            if ($model->save()) {
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
+        }
+
+        return $this->render('update', [
+            'model' => $model,
+        ]);
+    }
+
+    /**
      * Deletes an existing Admin model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id

@@ -26,6 +26,9 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'username',
+            'province',
+            'city',
+            'contact',
             [
                 'attribute' => 'role',
                 'value' => function (Admin $model) {
@@ -42,11 +45,11 @@ $this->params['breadcrumbs'][] = $this->title;
 
             [
                 'class' => 'yii\grid\ActionColumn',
-                'template' => '{view}{edit-password}{switch}',
+                'template' => '{view}{edit-password}{update}{switch}',
                 'buttons' => [
                     'view' => function ($url, Admin $model, $key) {
                         return Html::a('查看', $url, [
-                            'class' => 'btn btn-primary btn-xs',
+                            'class' => 'btn btn-success btn-xs',
                             'style' => 'margin-left:5px;',
                         ]);
                     },
@@ -56,9 +59,15 @@ $this->params['breadcrumbs'][] = $this->title;
                             'style' => 'margin-left:5px;',
                         ]);
                     },
+                    'update' => function ($url, Admin $model, $key) {
+                        return Html::a('修改信息', $url, [
+                            'class' => 'btn btn-primary btn-xs',
+                            'style' => 'margin-left:5px;',
+                        ]);
+                    },
                     'switch' => function ($url, Admin $model, $key) {
-                        $text = $model->status == Admin::STATUS_ACTIVE ?'禁用':'启用';
-                        $class = $model->status == Admin::STATUS_ACTIVE ?'btn btn-danger btn-xs':'btn btn-success btn-xs';
+                        $text = $model->status == Admin::STATUS_ACTIVE ? '禁用' : '启用';
+                        $class = $model->status == Admin::STATUS_ACTIVE ? 'btn btn-danger btn-xs' : 'btn btn-success btn-xs';
                         return Html::a($text, $url, [
                             'class' => $class,
                             'style' => 'margin-left:5px;',

@@ -17,6 +17,7 @@ class m191113_010946_create_goods_table extends Migration
             'name' => $this->string()->notNull()->comment('名称'),
             'thumb' => $this->string()->notNull()->comment('缩略图'),
             'carousel' => $this->text()->comment('轮播图'),
+            'abstract' => $this->string(200)->comment('描述'),
             'detail' => $this->text()->comment('详情'),
             'cate_id' => $this->integer()->notNull()->comment('分类'),
             'type' => $this->string(50)->notNull()->comment('型号'),
@@ -28,10 +29,10 @@ class m191113_010946_create_goods_table extends Migration
             'created_at' => $this->dateTime()->comment('创建时间'),
             'updated_at' => $this->dateTime()->comment('更新时间'),
         ]);
-        $this->createIndex('name','{{%goods}}','name');
-        $this->createIndex('cate_id','{{%goods}}','cate_id');
-        $this->createIndex('count','{{%goods}}','count');
-        $this->createIndex('status','{{%goods}}','status');
+        $this->createIndex('name', '{{%goods}}', 'name');
+        $this->createIndex('cate_id', '{{%goods}}', 'cate_id');
+        $this->createIndex('count', '{{%goods}}', 'count');
+        $this->createIndex('status', '{{%goods}}', 'status');
     }
 
     /**
