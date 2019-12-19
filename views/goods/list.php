@@ -49,6 +49,16 @@ $this->title = Yii::$app->name . '-商品搜索结果';
                         已报价：<span>{{item.count}}</span>次
                     </div>
                 </div>
+                <div class="info">
+                    <div class="sc">
+                        供应商：<span>{{item.supplier_username}}</span>
+                    </div>
+                </div>
+                <div class="info">
+                    <div class="sc">
+                        供应商省市：<span>{{item.supplier_province}} - {{item.supplier_city}}</span>
+                    </div>
+                </div>
                 <div class="opt">
                     <a href="javascript:;" class="collection" @click="collect(item.id,index)"
                        v-if="item.is_favorite">🌟取消收藏</a>

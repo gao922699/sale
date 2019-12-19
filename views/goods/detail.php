@@ -46,6 +46,26 @@ $this->title = Yii::$app->name . '-商品详情';
                 </div>
                 <div class="price">
                     <div class="sc">
+                        供应商：<span>{{detail.supplier_username}}</span>
+                    </div>
+                </div>
+                <div class="price">
+                    <div class="sc">
+                        供应商省市：<span>{{detail.supplier_province}} - {{detail.supplier_city}}</span>
+                    </div>
+                </div>
+                <div class="price">
+                    <div class="sc">
+                        供应商地址：<span>{{detail.supplier_address}}</span>
+                    </div>
+                </div>
+                <div class="price">
+                    <div class="sc">
+                        供应商联系方式：<span>{{detail.supplier_contact}} - {{detail.supplier_tel}}</span>
+                    </div>
+                </div>
+                <div class="price">
+                    <div class="sc">
                         成本价：<span>{{detail.cost}}元</span>
                     </div>
                     <div class="num">

@@ -50,10 +50,27 @@ class GoodsController extends BaseController
     public function actionDetailInfo($id)
     {
         $userId = Yii::$app->user->identity->getId();
-        $goods = Goods::find()->active()->where(['id' => $id])->with('cate')->one();
+        $goods = Goods::find()->with('admin')->with('cate')->active()->where(['id' => $id])->one();
         $cost = $goods->getCostPrice($userId);
-        $result = $goods->toArray();
+
+        $result['id'] = $goods->id;
+        $result['name'] = $goods->name;
+        $result['thumb'] = $goods->thumb;
+        $result['carousel'] = $goods->carousel;
+        $result['abstract'] = $goods->abstract;
+        $result['detail'] = $goods->detail;
+        $result['cate_name'] = $goods->cate->name;
+        $result['type'] = $goods->type;
+        $result['brand'] = $goods->brand;
+        $result['price'] = $goods->price;
         $result['cost'] = $cost;
+        $result['count'] = $goods->count;
+        $result['supplier_username'] = $goods->admin->username;
+        $result['supplier_province'] = $goods->admin->province;
+        $result['supplier_city'] = $goods->admin->city;
+        $result['supplier_address'] = $goods->admin->address;
+        $result['supplier_contact'] = $goods->admin->contact;
+        $result['supplier_tel'] = $goods->admin->tel;
         return $this->jsonResponse('success', $result);
     }
 
@@ -110,6 +127,7 @@ class GoodsController extends BaseController
         $pageSize = 20;
         $offset = ($page - 1) * $pageSize;
         $goods = Goods::find()
+            ->with('admin')
             ->andFilterWhere(['cate_id' => $cateId])
             ->andFilterWhere(['like', 'name', $keywords])
             ->active()
@@ -124,6 +142,9 @@ class GoodsController extends BaseController
                 'price' => $item->price,
                 'count' => $item->count,
                 'thumb' => $item->thumb,
+                'supplier_username' => $item->admin->username,
+                'supplier_province' => $item->admin->province,
+                'supplier_city' => $item->admin->city,
                 'is_favorite' => Favorite::isFavorite($item->id),
             ];
         }
