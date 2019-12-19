@@ -9,6 +9,9 @@ use yii\widgets\ActiveForm;
 /* @var $form yii\widgets\ActiveForm */
 $model->password = '';
 $model->confirmPassword = '';
+if ($model->isNewRecord) {
+    $model->tax = 0.00;
+}
 ?>
 
 <div class="admin-form">

@@ -42,6 +42,9 @@ class Admin extends \app\models\gii\Admin implements \yii\web\IdentityInterface
     public function rules()
     {
         return array_merge(parent::rules(), [
+            ['username', 'unique', 'when' => function () {
+                return $this->isNewRecord || ($this->username != $this->getOldAttribute('username'));
+            }],
             ['confirmPassword', 'compare', 'compareAttribute' => 'password', 'message' => '两次输入的密码不一致'],
             ['confirmPassword', 'required']
         ]);

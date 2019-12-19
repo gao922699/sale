@@ -23,7 +23,7 @@ class m191113_011008_create_user_table extends Migration
             'address' => $this->string()->comment('地址'),
             'tel' => $this->string()->comment('电话'),
             'contact' => $this->string()->comment('联系人'),
-            'tax' => $this->decimal(3, 2)->comment('税率'),
+            'tax' => $this->decimal(3, 2)->defaultValue(0)->comment('税率'),
             'status' => $this->tinyInteger()->notNull()->comment('状态'),
             'created_at' => $this->dateTime()->comment('创建时间'),
             'updated_at' => $this->dateTime()->comment('更新时间'),
