@@ -26,7 +26,19 @@ class AdminController extends BaseController
                 'rules' => [
                     [
                         'matchCallback' => function ($rule, $action) {
-                            return Admin::isAdmin();
+                            if ($action->id == 'edit-password') {
+                                if (Admin::isAdmin()) {
+                                    return true;
+                                } else if (Admin::isSupplier()) {
+                                    //供应商只能修改自己的密码
+                                    return Yii::$app->request->get('id') == Yii::$app->admin->identity->id;
+                                } else {
+                                    return false;
+                                }
+
+                            } else {
+                                return Admin::isAdmin();
+                            }
                         },
                         'allow' => true,
                         'roles' => ['@'],
@@ -108,7 +120,6 @@ class AdminController extends BaseController
                 $model->password = Yii::$app->security->generatePasswordHash($model->password);
                 if ($model->save(false)) {
                     Yii::$app->session->setFlash('success', '修改成功');
-                    return $this->redirect(['index']);
                 }
             }
 

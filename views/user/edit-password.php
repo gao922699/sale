@@ -5,13 +5,13 @@ use yii\web\View;
 
 /* @var $this yii\web\View */
 
-$this->title = Yii::$app->name . '-个人中心';
+$this->title = Yii::$app->name . '-修改密码';
 ?>
-<?= Html::cssFile('/css/center.css', ['position' => View::POS_HEAD]) ?>
+<?= Html::cssFile('/css/editPassword.css', ['position' => View::POS_HEAD]) ?>
     <div class="index clearfix">
         <div class="nav">
             <van-nav-bar
-                    title="个人中心"
+                    title="修改密码"
                     left-text="返回"
                     left-arrow
                     @click-left="onClickLeft"
@@ -21,13 +21,20 @@ $this->title = Yii::$app->name . '-个人中心';
             <div class="info">
                 <div class="infoName">{{username}}</div>
             </div>
-            <div class="list">
-                <a href="/user/favorite-list" class="sc">我的收藏</a>
-                <a href="/user/offer-list" class="bjd">报价记录单</a>
-                <a href="/user/edit-password" class="password">修改密码</a>
+            <div class="item clearfix">
+                <div class="itemLeft clearfix">新密码：</div>
+                <div class="itemRight">
+                    <input type="password" v-model="password" placeholder="请输入新密码"/>
+                </div>
             </div>
-            <div class="loginOut">
-                <van-button type="danger" class="btn" @click="logout">注销登录</van-button>
+            <div class="item clearfix">
+                <div class="itemLeft clearfix">确认密码：</div>
+                <div class="itemRight">
+                    <input type="password" v-model="confirmPassword" placeholder="请再次输入新密码"/>
+                </div>
+            </div>
+            <div class="itemBtn clearfix">
+                <van-button type="primary" class="btn" @click="editPassword">确认修改</van-button>
             </div>
         </div>
         <van-tabbar v-model="active">
@@ -37,4 +44,4 @@ $this->title = Yii::$app->name . '-个人中心';
             <van-tabbar-item icon="manager-o" url="/user">个人中心</van-tabbar-item>
         </van-tabbar>
     </div>
-<?= Html::jsFile('/js/center.js') ?>
+<?= Html::jsFile('/js/editPassword.js') ?>

@@ -24,7 +24,7 @@ use yii\helpers\Html;
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <img src="<?= $directoryAsset ?>/img/user2-160x160.jpg" class="user-image" alt="User Image"/>
-                        <span class="hidden-xs"><?=Yii::$app->admin->identity->username?></span>
+                        <span class="hidden-xs"><?= Yii::$app->admin->identity->username ?></span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
@@ -33,11 +33,18 @@ use yii\helpers\Html;
                                  alt="User Image"/>
 
                             <p>
-                                <?=Yii::$app->admin->identity->username?> - <?=Admin::$roleTxtMap[Yii::$app->admin->identity->role]?>
+                                <?= Yii::$app->admin->identity->username ?>
+                                - <?= Admin::$roleTxtMap[Yii::$app->admin->identity->role] ?>
                             </p>
                         </li>
                         <!-- Menu Footer-->
                         <li class="user-footer">
+                            <div class="pull-left">
+                                <?= Html::a(
+                                    '修改密码',
+                                    ['/admin/admin/edit-password', 'id' => Yii::$app->admin->identity->id], ['class' => 'btn btn-default btn-flat']
+                                ) ?>
+                            </div>
                             <div class="pull-right">
                                 <?= Html::a(
                                     '注销登录',

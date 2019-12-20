@@ -7,6 +7,7 @@ namespace app\controllers;
 use app\models\Favorite;
 use app\models\Goods;
 use app\models\LoginForm;
+use app\models\User;
 use Yii;
 
 class UserController extends BaseController
@@ -75,8 +76,25 @@ class UserController extends BaseController
         return $this->jsonResponse('success', $favorites);
     }
 
-    public function actionOfferPaginate()
+    /**
+     * @return array|string
+     * @throws \yii\base\Exception
+     */
+    public function actionEditPassword()
     {
-        return '接口：报价单分页数据';
+        if (Yii::$app->request->isPost) {
+            $password = Yii::$app->request->post('password');
+            $confirmPassword = Yii::$app->request->post('confirmPassword');
+            if ($password != $confirmPassword) {
+                return $this->jsonResponse('两次输入的密码不一致', [], 400);
+            }
+            $user = User::findOne(Yii::$app->user->identity->getId());
+            $user->password = Yii::$app->security->generatePasswordHash($password);
+            if ($user->save(false)) {
+                return $this->jsonResponse('修改成功');
+            }
+            return $this->jsonResponse('修改失败', [], 500);
+        }
+        return $this->render('edit-password');
     }
 }
