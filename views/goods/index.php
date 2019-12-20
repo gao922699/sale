@@ -20,7 +20,7 @@ use yii\web\View; ?>
     </div>
     <div class="cont clearfix">
         <van-tree-select
-                height="55vw"
+                :height="window.innerHeight - 320"
                 :items="topCates"
                 :main-active-index.sync="activeIndex"
                 @click-nav="getChildCates">
