@@ -120,3 +120,36 @@
     padding: 10px 0;
     background: #fafafa;
 }
+
+.search {
+    height: 80px;
+    margin: 10px auto;
+}
+.search .van-search{
+    padding: 0;
+}
+.search .van-search,
+.van-cell{
+    height: 80px;
+}
+.search .van-field__left-icon{
+    line-height: 80px;
+}
+
+.van-cell input{
+    height: 80px;
+    font-size: 28px;
+}
+.van-cell .van-icon{
+    font-size: 30px;
+}
+
+.van-search__action{
+    background: #07c160;
+    height: 80px;
+    font-size: 30px;
+    line-height: 80px;
+    width: 80px;
+    text-align: center;
+    color: #fff;
+}

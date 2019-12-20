@@ -93,6 +93,9 @@ var v = new Vue({
         jump(id) {
             window.location.href = '/goods/detail?id=' + id;
         },
+        search() {
+            window.location.href = '/goods/list?keywords=' + this.keywords +'&cateId=' + this.cateId + '&cateName=' + this.cateName;
+        },
         getUrlKey: function (name) {
             return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.href) || [, ""])[1].replace(/\+/g, '%20')) || null
         }

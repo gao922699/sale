@@ -15,15 +15,19 @@ $this->title = Yii::$app->name . '-商品搜索结果';
                 @click-left="onClickLeft"
         />
     </div>
-
+    <div class="search">
+        <van-search placeholder="请输入商品关键词" v-model="keywords" show-action @search="search"/>
+        <div slot="action" @click="search">搜索</div>
+    </div>
     <div class="cont clearfix">
         <div class="answer">
-            <span v-if="keywords != null">
-                关键字 <b>“{{keywords}}” </b>的搜索结果
+            <span v-if="cateName != null && cateName != ''">
+                分类<b> “{{cateName}}” </b>
             </span>
-            <span v-if="cateName != null">
-                分类<b> ”{{cateName}}“ </b>的搜索结果
+            <span v-if="keywords != null && keywords != ''">
+                &nbsp;关键字 <b>“{{keywords}}” </b>
             </span>
+            &nbsp;的搜索结果
         </div>
         <van-list
                 v-model="loading"
