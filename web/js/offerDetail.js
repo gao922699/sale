@@ -6,14 +6,29 @@ var v = new Vue({
         tabActive: 0,
         cartNum: 0,
         detail: {},
+        userInfo: {},
         dialogShow: false,
         imageHref: ''
     },
-    computed:{
-        totalPrice(){
-            var total=0;
-            for(var i=0; i<this.detail.offerGoods.length;i++){
-                total+=parseFloat(this.detail.offerGoods[i].offer_price) * parseInt(this.detail.offerGoods[i].count);
+    computed: {
+        totalPrice() {
+            var total = 0;
+            for (var i = 0; i < this.detail.offerGoods.length; i++) {
+                total += parseFloat(this.detail.offerGoods[i].offer_price) * parseInt(this.detail.offerGoods[i].count);
+            }
+            return total.toFixed(2);
+        },
+        totalTaxPrice() {
+            var total = 0;
+            for (var i = 0; i < this.detail.offerGoods.length; i++) {
+                total += parseFloat(this.detail.offerGoods[i].offer_price) * parseInt(this.detail.offerGoods[i].count) * (1 + parseFloat((this.userInfo.tax)));
+            }
+            return total.toFixed(2);
+        },
+        totalCostPrice() {
+            var total = 0;
+            for (var i = 0; i < this.detail.offerGoods.length; i++) {
+                total += parseFloat(this.detail.offerGoods[i].cost_price) * parseInt(this.detail.offerGoods[i].count);
             }
             return total.toFixed(2);
         }
@@ -45,6 +60,18 @@ var v = new Vue({
                 success: function (response) {
                     vm.detail = response.data;
                     vm.detail.date = vm.detail.date.split(' ')[0];
+                    console.log(vm.detail);
+                }
+            });
+        },
+        getUserInfo() {
+            var vm = this;
+            $.ajax({
+                type: "GET",
+                url: "/user/info",
+                dataType: "json",
+                success: function (response) {
+                    vm.userInfo = response.data;
                 }
             });
         },
@@ -98,5 +125,6 @@ var v = new Vue({
         this.id = this.getUrlKey('id');
         this.getCartNum();
         this.getOfferDetail();
+        this.getUserInfo();
     }
 })

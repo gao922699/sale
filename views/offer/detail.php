@@ -28,6 +28,10 @@ $this->title = Yii::$app->name . '-报价单详情';
                     <div>
                         <h2>报价对象：{{detail.name}}</h2>
                         <h2>联系方式：{{detail.tel}}</h2>
+                        <h2>报价单位：{{userInfo.username}}</h2>
+                        <h2>单位地址：{{userInfo.address}}</h2>
+                        <h2>电话：{{userInfo.tel}}</h2>
+                        <h2>联系人：{{userInfo.contact}}</h2>
                         <h2>报价商品</h2>
                     </div>
                     <van-panel :title="item.goods.name" :desc="item.remark"
@@ -35,10 +39,20 @@ $this->title = Yii::$app->name . '-报价单详情';
                                v-for="(item,index) in detail.offerGoods"
                                :key="item.id"
                     >
+                        <div class="goods-item">
+                            <div class="pull-left">
+                                <img :src="item.goods.thumb" alt="item.goods.name"/>
+                            </div>
+                            <div class="pull-right">
+                                <h5>型号：{{item.goods.type}}</h5>
+                                <h5>分类：{{item.goods.cate.name}}</h5>
+                                <h5>产品描述：{{item.goods.abstract}}</h5>
+                            </div>
+                        </div>
                     </van-panel>
-                    <h2>商品总价：{{totalPrice}}</h2>
+                    <h2>总价：{{totalPrice}}</h2>
+                    <h2>含税总价：{{totalTaxPrice}}</h2>
                     <h2>报价日期：{{detail.date}}</h2>
-                    <h2>报价单位：{{detail.user.username}}</h2>
                 </div>
                 <div>
                     <van-button type="primary" @click="download">下载报价单</van-button>
@@ -52,6 +66,10 @@ $this->title = Yii::$app->name . '-报价单详情';
                     <div>
                         <h2>报价对象：{{detail.name}}</h2>
                         <h2>联系方式：{{detail.tel}}</h2>
+                        <h2>报价单位：{{userInfo.username}}</h2>
+                        <h2>单位地址：{{userInfo.address}}</h2>
+                        <h2>电话：{{userInfo.tel}}</h2>
+                        <h2>联系人：{{userInfo.contact}}</h2>
                         <h2>报价商品</h2>
                     </div>
                     <van-panel :title="item.goods.name" :desc="item.remark"
@@ -59,9 +77,21 @@ $this->title = Yii::$app->name . '-报价单详情';
                                v-for="(item,index) in detail.offerGoods"
                                :key="item.id"
                     >
+                        <div class="goods-item">
+                            <div class="pull-left">
+                                <img :src="item.goods.thumb" alt="item.goods.name"/>
+                            </div>
+                            <div class="pull-right">
+                                <h5>型号：{{item.goods.type}}</h5>
+                                <h5>分类：{{item.goods.cate.name}}</h5>
+                                <h5>产品描述：{{item.goods.abstract}}</h5>
+                            </div>
+                        </div>
                     </van-panel>
+                    <h2>总价：{{totalPrice}}</h2>
+                    <h2>含税总价：{{totalTaxPrice}}</h2>
+                    <h2>总成本价：{{totalCostPrice}}</h2>
                     <h2>报价日期：{{detail.date}}</h2>
-                    <h2>报价单位：{{detail.user.username}}</h2>
                 </div>
                 <div>
                     <van-button type="primary" @click="downloadWithCost">下载报价单</van-button>

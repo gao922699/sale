@@ -46,7 +46,9 @@ class UserController extends BaseController
 
     public function actionInfo()
     {
-        return $this->jsonResponse('success', ['username' => Yii::$app->user->identity->username]);
+        $id = Yii::$app->user->identity->getId();
+        $user = User::find()->where(['id'=>$id])->one()->toArray();
+        return $this->jsonResponse('success', $user);
     }
 
     public function actionFavoriteList()
