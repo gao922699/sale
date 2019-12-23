@@ -82,7 +82,7 @@ class UserController extends BaseController
     {
         $model = new User();
 
-        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+        if ($model->load(Yii::$app->request->post())) {
             $model->password = Yii::$app->security->generatePasswordHash($model->password);
             $model->status = User::STATUS_ACTIVE;
             if ($model->save(false)) {

@@ -92,7 +92,7 @@ class AdminController extends BaseController
     {
         $model = new Admin();
 
-        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+        if ($model->load(Yii::$app->request->post())) {
             $model->password = Yii::$app->security->generatePasswordHash($model->password);
             $model->status = Admin::STATUS_ACTIVE;
             if ($model->save(false)) {

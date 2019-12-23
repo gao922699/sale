@@ -54,7 +54,7 @@ $this->title = Yii::$app->name . '-报价单详情';
                     <h2>含税总价：{{totalTaxPrice}}</h2>
                     <h2>报价日期：{{detail.date}}</h2>
                 </div>
-                <div>
+                <div class="download-button">
                     <van-button type="primary" @click="download">下载报价单</van-button>
                 </div>
             </van-tab>
@@ -93,7 +93,7 @@ $this->title = Yii::$app->name . '-报价单详情';
                     <h2>总成本价：{{totalCostPrice}}</h2>
                     <h2>报价日期：{{detail.date}}</h2>
                 </div>
-                <div>
+                <div class="download-button">
                     <van-button type="primary" @click="downloadWithCost">下载报价单</van-button>
                 </div>
             </van-tab>

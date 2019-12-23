@@ -140,6 +140,7 @@ class OfferController extends BaseController
                         'offer_id' => $model->id,
                         'goods_id' => $item->goods_id,
                         'offer_price' => $item->price,
+                        'remark' => $item->remark,
                         'cost_price' => $item->goods->getCostPrice($userId),
                         'count' => $item->count,
                         'created_at' => date('Y-m-d H:i:s')

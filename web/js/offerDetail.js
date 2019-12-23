@@ -76,6 +76,11 @@ var v = new Vue({
             });
         },
         download() {
+            //先把滚动条滚到顶部，防止生成的图片不全
+            window.pageYOffset = 0;
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+
             var imageObj = this.$refs.image;
             var height = imageObj.offsetHeight;
             var width = imageObj.offsetWidth;
@@ -97,6 +102,11 @@ var v = new Vue({
             });
         },
         downloadWithCost() {
+            //先把滚动条滚到顶部，防止生成的图片不全
+            window.pageYOffset = 0;
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+
             var imageObj = this.$refs.imageWithCost;
             var height = imageObj.offsetHeight;
             var width = imageObj.offsetWidth;

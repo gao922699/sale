@@ -30,6 +30,11 @@ $this->title = Yii::$app->name . '-商品详情';
                 <h3 class="mb10">{{detail.name}}</h3>
                 <div class="price">
                     <div class="sc">
+                        商品简介：<span>{{detail.brand}}</span>
+                    </div>
+                </div>
+                <div class="price">
+                    <div class="sc">
                         品牌：<span>{{detail.brand}}</span>
                     </div>
                     <div class="num">
