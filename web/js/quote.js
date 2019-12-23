@@ -16,6 +16,7 @@ var v = new Vue({
             //生成报价单用
             name: '',
             tel: '',
+            address: '',
             date: '',
             //end
             minDate: new Date(),
@@ -127,6 +128,7 @@ var v = new Vue({
                 data: {
                     name: vm.name,
                     tel: vm.tel,
+                    address: vm.address,
                     date: vm.date,
                 },
                 dataType: "json",

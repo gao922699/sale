@@ -17,6 +17,7 @@ class m191113_011504_create_offer_table extends Migration
             'user_id' => $this->integer()->notNull()->comment('用户ID'),
             'name' => $this->string()->notNull()->comment('报价对象名称'),
             'tel' => $this->string()->notNull()->comment('报价对象电话'),
+            'address' => $this->string()->notNull()->comment('报价对象地址'),
             'date' => $this->dateTime()->notNull()->comment('报价日期'),
             'created_at' => $this->dateTime()->comment('创建时间')
         ]);

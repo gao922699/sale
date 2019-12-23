@@ -86,7 +86,7 @@ $this->title = Yii::$app->name . '-待报价商品';
         <van-overlay :show="bjshow" @click="bjshow = false">
             <div class="wrapper" @click.stop>
                 <div class="overBox">
-                    <p class="title">编辑</p>
+                    <p class="title">报价信息</p>
                     <div class="overCont two">
                         <div class="item clearfix">
                             <div class="itemLeft">名称：</div>
@@ -98,6 +98,12 @@ $this->title = Yii::$app->name . '-待报价商品';
                             <div class="itemLeft clearfix">电话：</div>
                             <div class="itemRight">
                                 <input type="text" v-model="tel"/>
+                            </div>
+                        </div>
+                        <div class="item clearfix">
+                            <div class="itemLeft clearfix">地址：</div>
+                            <div class="itemRight">
+                                <input type="text" v-model="address"/>
                             </div>
                         </div>
                         <div class="item clearfix">

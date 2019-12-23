@@ -11,6 +11,7 @@ use Yii;
  * @property int $user_id 用户ID
  * @property string $name 报价对象名称
  * @property string $tel 报价对象电话
+ * @property string $address 报价对象地址
  * @property string $date 报价日期
  * @property string $created_at 创建时间
  */
@@ -30,10 +31,10 @@ class Offer extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['user_id', 'name', 'tel', 'date'], 'required'],
+            [['user_id', 'name', 'tel', 'date', 'address'], 'required'],
             [['user_id'], 'integer'],
             [['date', 'created_at'], 'safe'],
-            [['name', 'tel'], 'string', 'max' => 255],
+            [['name', 'tel', 'address'], 'string', 'max' => 255],
         ];
     }
 
@@ -47,6 +48,7 @@ class Offer extends \yii\db\ActiveRecord
             'user_id' => '用户ID',
             'name' => '报价对象名称',
             'tel' => '报价对象电话',
+            'address' => '报价对象地址',
             'date' => '报价日期',
             'created_at' => '创建时间',
         ];

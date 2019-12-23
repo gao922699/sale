@@ -117,6 +117,7 @@ class OfferController extends BaseController
         $userId = Yii::$app->user->identity->getId();
         $name = Yii::$app->request->post('name');
         $tel = Yii::$app->request->post('tel');
+        $address = Yii::$app->request->post('address');
         $date = Yii::$app->request->post('date');
         if (empty($name) || empty($tel) || empty($date)) {
             return $this->jsonResponse('请填写完整信息', [], 400);
@@ -127,6 +128,7 @@ class OfferController extends BaseController
             $model->user_id = $userId;
             $model->name = $name;
             $model->tel = $tel;
+            $model->address = $address;
             $model->date = $date;
             if ($model->save()) {
                 $goods = OfferCart::find()->with('goods')->where(['user_id' => $userId])->all();

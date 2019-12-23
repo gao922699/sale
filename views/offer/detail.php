@@ -22,16 +22,19 @@ $this->title = Yii::$app->name . '-报价单详情';
         <van-tabs v-model="tabActive">
             <van-tab title="客户报价单">
                 <div ref="image" id="offer">
-                    <div>
+                    <div style="text-align: center;">
                         <h1>报价单</h1>
                     </div>
                     <div>
                         <h2>报价对象：{{detail.name}}</h2>
                         <h2>联系方式：{{detail.tel}}</h2>
+                        <h2>地址：{{detail.address}}</h2>
+                        <hr>
                         <h2>报价单位：{{userInfo.username}}</h2>
                         <h2>单位地址：{{userInfo.address}}</h2>
                         <h2>电话：{{userInfo.tel}}</h2>
                         <h2>联系人：{{userInfo.contact}}</h2>
+                        <hr>
                         <h2>报价商品</h2>
                     </div>
                     <van-panel :title="item.goods.name" :desc="item.remark"
@@ -50,6 +53,7 @@ $this->title = Yii::$app->name . '-报价单详情';
                             </div>
                         </div>
                     </van-panel>
+                    <hr>
                     <h2>总价：{{totalPrice}}</h2>
                     <h2>含税总价：{{totalTaxPrice}}</h2>
                     <h2>报价日期：{{detail.date}}</h2>
@@ -60,16 +64,19 @@ $this->title = Yii::$app->name . '-报价单详情';
             </van-tab>
             <van-tab title="内部报价单">
                 <div ref="imageWithCost" id="offer-with-cost">
-                    <div>
+                    <div style="text-align: center;">
                         <h1>报价单</h1>
                     </div>
                     <div>
                         <h2>报价对象：{{detail.name}}</h2>
                         <h2>联系方式：{{detail.tel}}</h2>
+                        <h2>地址：{{detail.address}}</h2>
+                        <hr>
                         <h2>报价单位：{{userInfo.username}}</h2>
                         <h2>单位地址：{{userInfo.address}}</h2>
                         <h2>电话：{{userInfo.tel}}</h2>
                         <h2>联系人：{{userInfo.contact}}</h2>
+                        <hr>
                         <h2>报价商品</h2>
                     </div>
                     <van-panel :title="item.goods.name" :desc="item.remark"
@@ -88,6 +95,7 @@ $this->title = Yii::$app->name . '-报价单详情';
                             </div>
                         </div>
                     </van-panel>
+                    <hr>
                     <h2>总价：{{totalPrice}}</h2>
                     <h2>含税总价：{{totalTaxPrice}}</h2>
                     <h2>总成本价：{{totalCostPrice}}</h2>

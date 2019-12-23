@@ -22,6 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             'name',
             'tel',
+            'address',
             [
                 'label' => '商品详情',
                 'format' => 'raw',
