@@ -5,30 +5,30 @@ use yii\web\View;
 
 /* @var $this yii\web\View */
 
-$this->title = Yii::$app->name . '-个人中心';
+$this->title = Yii::$app->name . '-修改税率';
 ?>
-<?= Html::cssFile('/css/center.css', ['position' => View::POS_HEAD]) ?>
+<?= Html::cssFile('/css/editTax.css', ['position' => View::POS_HEAD]) ?>
     <div class="index clearfix">
         <div class="nav">
             <van-nav-bar
-                    title="个人中心"
-                    left-text="返回"
-                    left-arrow
-                    @click-left="onClickLeft"
+                title="修改税率"
+                left-text="返回"
+                left-arrow
+                @click-left="onClickLeft"
             />
         </div>
         <div class="cont clearfix">
             <div class="info">
                 <div class="infoName">{{username}}</div>
             </div>
-            <div class="list">
-                <a href="/user/favorite-list" class="sc">我的收藏</a>
-                <a href="/user/offer-list" class="bjd">报价记录单</a>
-                <a href="/user/edit-tax" class="tax">修改税率</a>
-                <a href="/user/edit-password" class="password">修改密码</a>
+            <div class="item clearfix">
+                <div class="itemLeft clearfix">税率：</div>
+                <div class="itemRight">
+                    <input type="text" v-model="tax" placeholder="请输入0-1的两位小数,如0.17"/>
+                </div>
             </div>
-            <div class="loginOut">
-                <van-button type="danger" class="btn" @click="logout">注销登录</van-button>
+            <div class="itemBtn clearfix">
+                <van-button type="primary" class="btn" @click="editTax">确认修改</van-button>
             </div>
         </div>
         <van-tabbar v-model="active">
@@ -38,4 +38,4 @@ $this->title = Yii::$app->name . '-个人中心';
             <van-tabbar-item icon="manager-o" url="/user">个人中心</van-tabbar-item>
         </van-tabbar>
     </div>
-<?= Html::jsFile('/js/center.js') ?>
+<?= Html::jsFile('/js/editTax.js') ?>

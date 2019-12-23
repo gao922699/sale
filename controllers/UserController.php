@@ -99,4 +99,22 @@ class UserController extends BaseController
         }
         return $this->render('edit-password');
     }
+
+    /**
+     * @return array|string
+     * @throws \yii\base\Exception
+     */
+    public function actionEditTax()
+    {
+        if (Yii::$app->request->isPost) {
+            $tax = Yii::$app->request->post('tax');
+            $user = User::findOne(Yii::$app->user->identity->getId());
+            $user->tax = $tax;
+            if ($user->save(false)) {
+                return $this->jsonResponse('修改成功');
+            }
+            return $this->jsonResponse('修改失败', [], 500);
+        }
+        return $this->render('edit-tax');
+    }
 }
