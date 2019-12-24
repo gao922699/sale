@@ -4,12 +4,11 @@ namespace app\models\gii;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\Admin;
 
 /**
  * AdminSearch represents the model behind the search form of `app\models\Admin`.
  */
-class AdminSearch extends Admin
+class AdminSearch extends \app\models\Admin
 {
     /**
      * {@inheritdoc}
@@ -40,7 +39,7 @@ class AdminSearch extends Admin
      */
     public function search($params)
     {
-        $query = Admin::find();
+        $query = \app\models\Admin::find();
 
         // add conditions that should always apply here
 
